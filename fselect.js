@@ -103,9 +103,11 @@
             reloadDropdownLabel: function() {
                 var settings = this.settings;
                 var labelText = [];
+                var value = '';
                 this.$wrap.find('.fs-option.selected').each(function(i, el) {
                     var text = $(el).find('.fs-option-label').text();
-                    if(text!='请选择' && i!=0){
+                    value= $(el).attr('data-value');
+                    if(value!='' && value!=undefined){
                         labelText.push(text);
                     }
                 });
@@ -265,9 +267,11 @@
         if ($wrap.hasClass('multiple')) {
             var selected = [];
             $wrap.find(".fs-option").addClass('selected');
+            var value = '';
             $wrap.find('.fs-option.selected').each(function(i, el) {
-                if(i>0){
-                    selected.push($(el).attr('data-value'));
+                value = $(el).attr('data-value');
+                if(value!='' && value!=undefined){
+                    selected.push(value);
                 }
             });
         }
