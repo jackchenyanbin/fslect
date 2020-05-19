@@ -107,7 +107,7 @@
                 this.$wrap.find('.fs-option.selected').each(function(i, el) {
                     var text = $(el).find('.fs-option-label').text();
                     value= $(el).attr('data-value');
-                    if(value!='' && value!=undefined){
+                    if(value!='' && value!=null){
                         labelText.push(text);
                     }
                 });
@@ -174,8 +174,13 @@
         if ($wrap.hasClass('multiple')) {
             var selected = [];
             $(this).toggleClass('selected');
+            var val = '';
             $wrap.find('.fs-option.selected').each(function(i, el) {
-                selected.push($(el).attr('data-value'));
+                val = $(el).attr('data-value');
+                //去掉为空的拼接逗号
+                if(val !='' && val !=null){
+                    selected.push(val);
+                   } 
             });
         }else {
             var selected = $(this).attr('data-value');
