@@ -7,7 +7,7 @@ select下拉框，支持搜索，多选
 #用法
 $("id").attr("multiple","multiple").fSelect();
 #动态多次加载
-$("id").attr("multiple","multiple").fSelect("reload");
+$("id").attr("multiple","multiple").fSelect("reload");或者$("id").empty().attr("multiple","multiple").fSelect("reload",{showSearch:false,placeholder:"三级公司"});
 #搜索框和下方多选按钮控制
 $("id").attr("multiple","multiple").fSelect({showSearch: true,showButton:true});
 #主要参数
