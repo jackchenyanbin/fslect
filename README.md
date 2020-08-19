@@ -20,3 +20,6 @@ showButton:true //是否显示多选按钮
 
 ##使用时会默认选择第一个，尽可能第一个为空
 #获取选择的值与原select一致，$("id").val()即可
+
+
+推荐一个牛逼的多选 https://gitee.com/maplemei/xm-select
